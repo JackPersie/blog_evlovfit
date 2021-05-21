@@ -1,7 +1,7 @@
 # blog_evlovfit
 
 A Blog site implemented using Python/Django(MVT structure).
-It contains a list of blogs posted by users. Only registered users can meddle with the options in the site, though anyone can view a blog.
+It contains a list of blogs posted by users. Only registered users can meddle with the options in the site, though anyone can still view the blogs.
 
 Features:
 1. A user(anonymous) need not register or login to:
