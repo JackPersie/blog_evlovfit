@@ -1,0 +1,16 @@
+{% extends 'blogem/base.html' %}
+{% block content %}
+
+
+
+<form method="post">
+{% csrf_token %}
+<h2>Sure u wanna delete {{object}} ?</h2>
+<input class="btn btn-light" type="submit" value="Yes">
+<a id="dl" class="btn btn-light"href="{% url 'blogem:posts_detail' pk=posts.pk %}">No</a>
+
+</form>
+
+
+
+{% endblock %}

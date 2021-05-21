@@ -1,0 +1,15 @@
+{% extends 'blogem/base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+<div class="container-fluid">
+<h1>Welcome Champ  <br> Nice to see you again! </h1>
+{% else %}
+<h1>Hey Champ! <br> You surfing or creating history ?</h1>
+</div>
+{% endif %}
+
+
+
+
+{% endblock %}

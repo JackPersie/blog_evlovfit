@@ -1,0 +1,25 @@
+{% extends 'blogem/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+
+<div class="container"> 
+<h1>Creating History eh ?</h1>
+<h3>Register below</h3><br>
+<form action="" method="POST">
+    
+
+    {% csrf_token %}
+    
+    {% bootstrap_form form %}
+    <!-- {{form.errors}} -->
+    <input class="btn btn-light" type="submit" value="Submit">
+    
+</form>
+</div>
+
+
+
+
+
+
+{% endblock %}

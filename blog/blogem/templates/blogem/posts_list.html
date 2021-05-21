@@ -1,0 +1,22 @@
+{% extends 'blogem/base.html' %}
+{% block content %}
+
+
+
+<div class="container p1">
+
+    {% for post in posts_list %}
+    <div>
+        <h2><a id= "li" href="{% url 'blogem:posts_detail' pk=post.pk %}">{{post.title}}<br></a></h2>
+        <p>Posted by {{post.user.username|title}}<br></a></p>
+        <p>Total comments on this post: {{post.comments.count}}</a></p> <br><br>
+    </div>
+    
+    {% endfor %}
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'blogem/base.html' %}
+{% block content %}
+<div class="container p1">
+    <h1>{{posts.title}}</h1>
+
+    <h5>By {{posts.user|title}}</h5>
+    <p>{{posts.content|safe|linebreaks}}</p>
+</div>
+<div class="container">
+
+
+{% if user.is_authenticated %}
+    <h5><a class="btn btn-light" href="{% url 'blogem:update_post' pk=posts.pk %}"">Update</a></h5><br>
+    <h5><a class="btn btn-light" href="{% url 'blogem:delete_post' pk=posts.pk %}"">Delete</a></h5>
+
+    <hr>
+    <h5><a class="btn btn-light" href="{% url 'blogem:create_comment' pk=posts.pk %}">Comment</a></h5><br>
+    {% endif %}
+    <h3>Check below for comments on this post </h3>
+    {% for comment in posts.comments.all %}
+    <br>
+        {% if comment.count != 0 %}
+            <p>User -> {{comment.user|title}}, commented</p>
+            <p>{{comment.content}}</p>
+        {% else %}
+            <p>No one commented</p>
+        {% endif %}
+    
+    {% endfor %}
+</div>
+{% endblock %}

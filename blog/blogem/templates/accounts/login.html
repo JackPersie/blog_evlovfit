@@ -1,0 +1,35 @@
+{% extends 'blogem/base.html' %}
+{% block content %}
+
+
+
+<div class="jumbotron-fluid log">
+    <h1>Login below Champ</h1> <br>
+    {% if messages %}
+<!-- <ul class="messages"> -->
+    {% for message in messages %}
+    <p {% if message.tags %} {% endif %}>
+        {{ message }}
+    </p>
+    {% endfor %}
+</ul>
+{% endif %}
+    <form action="{% url 'blogem:login' %}" method="POST">
+        {%csrf_token%}
+
+        <label for="username">Username</label> 
+        <input type="text" name="username" placeholder="your username"><br><br>
+
+        <label for="password">Password</label> 
+        <input type="password" name="password" placeholder="your password"> <br><br>
+
+        <input class="btn btn-light" type="submit" value="Login">
+    </form>
+
+</div>
+
+{% endblock %}
+
+
+
+
