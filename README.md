@@ -19,6 +19,7 @@ Features:
 Reasons:
 * At first it was going to be an accountless site but in real life scenario it wont work well. So accounts are a must
 * Anonymous can still view the blog, without an account 'cause in real some might get attracted and create an account. (you never know ;) )
+* I used SQL, SQLite to be precise.Accounts/Users db are handled by django.Personally I would prefer NoSQL db like MongoDB(which am learning atm), cause is schemaless, flexible especially if db need to structural changes.
 
 Installation and Running the server:
 
